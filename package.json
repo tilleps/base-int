@@ -1,0 +1,50 @@
+{
+  "name": "baseint",
+  "version": "0.1.0",
+  "description": "Encode and decode in any base, supports BigInt",
+  "main": "lib/index.mjs",
+  "scripts": {
+    "format": "prettier --write lib/ .eslintrc.cjs",
+    "lint": "tsc --noEmit -p ./tsconfig.json",
+    "test": "npm run lint && tap lib/index.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tilleps/base-int.git"
+  },
+  "keywords": [
+    "base62",
+    "base58",
+    "base36",
+    "base32",
+    "encoding",
+    "decoding",
+    "shortner"
+  ],
+  "author": "Eugene Song <tilleps@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tilleps/base-int/issues"
+  },
+  "homepage": "https://github.com/tilleps/base-int#readme",
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "tap": "^18.7.1",
+    "typescript": "^5.4.2"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./lib/index.mjs",
+      "default": "./lib/index.mjs"
+    },
+    "./*": {
+      "types": "./lib/*.d.ts",
+      "require": "./dist/*.js",
+      "import": "./lib/*.mjs",
+      "default": "./lib/*.mjs"
+    }
+  },
+  "types": "./index.d.ts"
+}
